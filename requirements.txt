@@ -1,11 +1,5 @@
-# Core Deep Learning
-torch==2.1.0+cu118
-torchvision==0.16.0+cu118
-pytorch3d==0.7.8
-nvdiffrast==0.3.3
-
 # Diffusion Models
-diffusers==0.24.0
+diffusers
 transformers==4.46.0
 
 # Scientific Computing
@@ -40,4 +34,4 @@ dearpygui==1.11.1
 
 # Other
 objaverse==0.1.7
-pypatchmatch==1.0.1
+pypatchmatch==1.0.0

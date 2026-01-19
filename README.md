@@ -3,28 +3,37 @@ Official implementation of **ProcTex: Consistent and Interactive Text-to-texture
 
 ## Environment Setup
 
-### Prerequisites
-- CUDA 11.8+
-- Python 3.10+
-- Conda (recommended)
+The implementation is tested on the following configurations:
+
+* Ubuntu 22.04 with NVIDIA RTX 4090 (CUDA 11.8, Python 3.10, PyTorch 2.1.0)
+* Ubuntu 24.04 with NVIDIA RTX 5090 (CUDA 12.8, Python 3.11, PyTorch 2.8.0)
+
+Other configurations may work but have not been tested.
 
 ### Installation
 
-1. **Create a conda environment:**
+1. **Create a conda environment and install PyTorch:**
+
 ```bash
+# CUDA 11.8
 conda create -n proctex python=3.10
 conda activate proctex
-```
-
-2. **Install PyTorch with CUDA support:**
-```bash
 pip install torch==2.1.0+cu118 torchvision==0.16.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+
+# CUDA 12.8
+conda create -n proctex python=3.11
+conda activate proctex
+pip install torch==2.8.0 torchvision
 ```
 
-3. **Install PyTorch3D:**
+2. **Install PyTorch3D:**
 ```bash
 # Option 1: Install from pre-built wheels (recommended)
+# CUDA 11.8
 pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py310_cu118_pyt210/download.html
+
+# CUDA 12.8
+pip install --extra-index-url https://miropsota.github.io/torch_packages_builder pytorch3d==0.7.8+pt2.8.0cu128
 
 # Option 2: Build from source
 pip install "git+https://github.com/facebookresearch/pytorch3d.git"
@@ -32,7 +41,7 @@ pip install "git+https://github.com/facebookresearch/pytorch3d.git"
 
 4. **Install nvdiffrast:**
 ```bash
-pip install git+https://github.com/NVlabs/nvdiffrast/
+pip install git+https://github.com/NVlabs/nvdiffrast.git --no-build-isolation
 ```
 
 5. **Install remaining dependencies:**
