@@ -1,0 +1,43 @@
+# Core Deep Learning
+torch==2.1.0+cu118
+torchvision==0.16.0+cu118
+pytorch3d==0.7.8
+nvdiffrast==0.3.3
+
+# Diffusion Models
+diffusers==0.24.0
+transformers==4.46.0
+
+# Scientific Computing
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.3
+scikit-learn==1.2.2
+
+# Image Processing
+pillow==10.4.0
+opencv-python-headless==4.10.0.84
+kornia==0.7.3
+
+# 3D Mesh Processing
+trimesh==4.5.1
+open3d==0.18.0
+pymeshlab==2023.12.post2
+pyfqmr==0.2.1
+xatlas==0.0.9
+pywavefront==1.3.3
+gpytoolbox==0.3.4
+
+# Utilities
+omegaconf==2.3.0
+tqdm==4.66.5
+loguru==0.7.2
+
+# GUI & Visualization
+gradio==4.44.1
+kiui==0.2.13
+dearpygui==1.11.1
+
+# Other
+objaverse==0.1.7
+pypatchmatch==1.0.1

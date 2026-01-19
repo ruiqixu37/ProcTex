@@ -1,0 +1,73 @@
+### input
+mesh: data/procedural_fork/train
+
+InTex:
+  seed: "random"
+  prompt: "a dinner fork with silver tip and wood handle"
+  ### mesh's front-facing direction, check mesh.py for details
+  front_dir: "+z"
+
+  ### output
+  outdir: logs/fork
+  save_path: out.obj
+
+  ### SD 1.5 checkpoint
+  model_key: runwayml/stable-diffusion-v1-5
+  # model_key: xyn-ai/anything-v4.0
+  # model_key: philz1337/revanimated
+  lora_keys: []
+  enable_lcm: False
+
+  ### additional positive/negative prompt
+  posi_prompt: "realistic, masterpiece, high quality"
+  nega_prompt: "bad quality, worst quality, shadows"
+
+  ### controlnet model
+  control_mode: ['depth_inpaint']
+
+  ### whether append 'front/side/back/top/bottom view' for the prompt, only use if the mesh's front dir is correctly set.
+  text_dir: False
+
+  ### camera path to generate the texture
+  camera_path: top
+
+  ### background image, default to white.
+  bg_image: None # assets/brick_wall.png
+
+  ### generated texture image resolution
+  texture_size: 512
+
+  ### threshold for view cosine value
+  cos_thresh: 0
+
+  ### refine strength (larger value means less strong refinement)
+  refine_strength: 0.9
+
+  ### camera rendering resolution (choose from [512, 1024, 2048, 4096], larger than 512 will incur Real-ESRGAN super-resolution)
+  render_resolution: 1024
+
+  ### open a gui for visualization (need a screen)
+  gui: false
+
+  ### visualize intermediate results (support x11 forwarding)
+  vis: false
+
+  ### recalculate uv coordinate for mesh
+  retex: false
+  remesh: false
+
+  ### gui resolution
+  H: 800
+  W: 800
+
+  ### camera setting
+  radius: 2.5
+  fovy: 50
+
+  partial_components:
+
+ProcCorrNet:
+  iterations: 10000
+  verbose_interval: 100
+  lr: 1e-4
+  save_model: True
